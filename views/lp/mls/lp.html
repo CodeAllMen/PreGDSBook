@@ -1,0 +1,231 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=360">
+    <title>Ebook</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #ffffff;
+        }
+
+        .main {
+            min-height: 500px;
+            max-width: 360px;
+            margin: 0 auto 0 auto;
+            overflow-x: hidden;
+            text-align: center;
+            background-color: white;
+        }
+
+        img {
+            border-radius: 10px;
+            width: 80%;
+        }
+
+        .head {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+
+        .head a {
+            color: red;
+        }
+
+        .title {
+        }
+
+        .title p {
+            margin: 10px 0px 10px 0px;
+        }
+
+        .sub {
+            outline: none;
+            color: white;
+            padding: 8px 16px 8px 16px;
+            font-size: 17px;
+            background-color: #69a012;
+        }
+
+        .exit {
+            outline: none;
+            color: white;
+            font-size: 16px;
+            margin: 10px;
+            padding: 2px 10px 2px 10px;
+            background-color: black;
+        }
+
+        .tnc {
+            text-align: -webkit-auto;
+            margin: 0 45px 10px 45px;
+        }
+
+        .tncar {
+            text-align: right;
+            margin: 0 45px 10px 45px;
+        }
+
+        .btn-left {
+            outline: none;
+            border-right-style: groove;
+            border-radius: 10px 0px 0px 10px;
+            background-color: antiquewhite;
+        }
+
+        .btn-right {
+            outline: none;
+            border-radius: 0px 10px 10px 0px;
+            margin-left: -4px;
+            background-color: antiquewhite;
+        }
+
+        select {
+            height: 40px;
+            border: 1px solid rgb(0, 0, 0);
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-size: 13px;
+            text-align: center;
+            padding: 10px 50px 10px 10px;
+            height: 40px;
+            -webkit-appearance: none;
+            background-color: #fff;
+            background: url(/static/img/select.png) no-repeat scroll right center;
+            background-size: 20px;
+            padding-right: 14px;
+            max-width: 650px;
+            width: 50%;
+            margin: 0 0 5px 0;
+        }
+
+        .noexit {
+            display: none;
+        }
+
+        #ar-div.tnc {
+            text-align: right;
+        }
+
+        .mb_number {
+            width: 180px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .mb_number_input {
+            width: 100%;
+            height: 40px;
+            font-size: 14px;
+            padding-left: 8px;
+            padding-right: 8px;
+            border-radius: 5px;
+            border: 1px solid #333333;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+<p id="ptxid" style="display:none"></p>
+<div class="main">
+    <div class="head">
+        <div>
+            <button class="btn-left" id="en-btn">En</button>
+        </div>
+        <div class="">
+
+        </div>
+    </div>
+    <div id="en-div">
+        <div class="title">
+{{/*            <p>RM 2.0 per week</p>*/}}
+        </div>
+        <img src="/static/img/ebook.png">
+        <p style="font-size: 13px;">Ebook</p>
+        <p style="margin:10px;">Subscribe for RM2(excl SST)/msg 25sms/month. To cancel, send STOP EB to 36881.</p>
+        <div class="item">
+            {{/*            <select id="operator">*/}}
+            {{/*                <option value="1">DIGI</option>*/}}
+            {{/*            </select>*/}}
+            <div class="mb_number">
+                <input id="mb_number_1" class="mb_number_input" placeholder="Your mobile number"/>
+            </div>
+        </div>
+        <button class="sub" id="comfirm">Subscribe</button>
+        <br>
+        <p class="tnc" style="font-size: 11px;">
+            This is an ongoing subscription service for electronic book reading content. All subscription contents are compatible with (type
+            of phones). Digi users will receive 6SMS/week at RM2(excl SST), max 25 SMS/month and RM50/month . Data charges are
+            billed separately by mobile operators
+            .Please seek parents or guardian approval if you are 18years old and below. Upon clicking subscribe you
+            herby acknowledge that you have fully read and understood the “General terms and conditions. To cancel this
+            service send STOP EB to 36881. Helpline 03-2164-3273, support@macrokiosk.com, 9am-6pm, Mon-Fri. This
+            service is operating according to the Malaysia Code of Conduct for SMS Services. Technology powered by
+            Macrokiosk Bhd.
+        </p>
+        <div style="width: 100%; height: 30px;"></div>
+    </div>
+    <div id="ar-div" class="noexit">
+        <div class="title">
+            <p>مجانًا لمدة 24 ساعة ثم 15 دراهم أسبوعيًا</p>
+        </div>
+        <img src="/static/img/recipe.png">
+        <p>Ebook</p>
+        <p style="margin:10px;">يرجى تحديد شبكة الاتصالات والنقر على تأكيد</p>
+        <div class="item">
+            <select id="operator">
+                <option value="1">Etisalat</option>
+                <option value="2">Du</option>
+            </select>
+            <div class="mb_number">
+                <input id="mb_number_2" class="mb_number_input" placeholder="رقم هاتفك"/>
+            </div>
+        </div>
+        <p id="message" style="color:red;"></p>
+        <button class="sub" id="comfirm">تأكيد</button>
+        <br>
+        <p>مجانًا لمدة 24 ساعة ثم 15 دراهم أسبوعيًا</p>
+        <p class="tncar">من خلال النقر على "اشترك" ، فإنك توافق على البنود والشروط التالية:<br>
+            تتجدد الخدمة تلقائيا كل أسبوع<br>
+            لا يوجد التزام يمكنك إلغاؤه في أي وقت عن طريق إرسال C RC إلى 1111<br>
+            للحصول على الدعم ، يرجى الاتصال vas@kncee.com<br>
+            النسخة التجريبية المجانية صالحة فقط للمشتركين الجدد
+        </p>
+    </div>
+</div>
+</body>
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script>
+    $("#en-btn").click(function () {
+        $("#en-div").removeClass("noexit")
+        $("#ar-div").addClass("noexit")
+    })
+    $("#ar-btn").click(function () {
+        $("#ar-div").removeClass("noexit")
+        $("#en-div").addClass("noexit")
+    })
+    $("#comfirm").click(function () {
+
+        window.location.href = "/mls/pin";
+        return;
+        let number = $("#mb_number_1").val();
+        if (!number) {
+            number = $("#mb_number_2").val();
+        }
+
+        if (!number) {
+            alert("Please input mobile number");
+            return
+        }
+
+        window.location.href = "\/api\/sub_sms\/364482\/et" + "\/" + number;
+
+
+    })
+</script>
+
+</html>

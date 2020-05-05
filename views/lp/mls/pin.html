@@ -1,0 +1,184 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=360">
+    <title>Ebook</title>
+    <!-- <link type="text/css" rel="stylesheet" href="/static/css/game.css"> -->
+    <style>
+        body {
+            margin: 0;
+            background-color: bisque
+        }
+
+        .main {
+            min-height: 700px;
+            max-width: 360px;
+            margin: 0 auto 0 auto;
+            overflow-x: hidden;
+            text-align: center;
+            background-color: white;
+        }
+
+        img {
+            width: 80%;
+        }
+
+        .head {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+
+        .head a {
+            color: red;
+        }
+
+        .title {
+        }
+
+        .title p {
+            margin: 10px 0px 10px 0px;
+        }
+
+        .sub {
+            outline: none;
+            color: white;
+            padding: 8px 16px 8px 16px;
+            font-size: 17px;
+            background-color: #69a012;
+        }
+
+        .exit {
+            outline: none;
+            color: white;
+            font-size: 16px;
+            margin: 10px;
+            padding: 2px 10px 2px 10px;
+            background-color: black;
+        }
+
+        .tnc {
+            text-align: -webkit-auto;
+            margin: 0 45px 10px 45px;
+        }
+
+        .btn-left {
+            outline: none;
+            border-right-style: groove;
+            border-radius: 10px 0px 0px 10px;
+            background-color: antiquewhite;
+        }
+
+        .btn-right {
+            outline: none;
+            border-radius: 0px 10px 10px 0px;
+            margin-left: -4px;
+            background-color: antiquewhite;
+        }
+
+        input {
+            outline: none;
+            border-color: currentColor;
+            margin: 5px;
+            border-style: solid;
+            border-width: 1px 1px 1px 1px;
+            height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="main">
+    <img src="/static/img/digi_logo.png" style="width: 50px; float: left; margin-top: 10px; margin-left: 10px;">
+    <div style="font-size: 16px; font-weight: 700; margin-top: 30px;">
+        Subscription Confirmation Page
+    </div>
+    <div style="padding: 15px;">
+        KeyWord: EB
+        <br/>
+        Registration fee: RM0.00
+        <br/>
+        Renewal fee: RM0.00 per Week
+        <br/>
+        Content fee: RM2.00 per content
+        <br/>
+        Next renewal date: 25/03/2021
+        <br/>
+        <br/>
+        <h3 style="color: red;">
+            This subscription will be auto renewed until you cancel the service. To cancel, send STOP EB to 36881.
+        </h3>
+        <br/>
+        <br/>
+        Click here to learn more about mobile content services to avoid unexpected charges. For further enquiry, please contact Content Provider's customer support at 03-2164 3273.
+        <br/>
+        <br/>
+        Are you sure you want to proceed with the subscription? Press "Confirm" to proceed.
+        <br/>
+        We have sent you TAC via SMS. Please enter the TAC below:
+        <br/>
+        <input id="pin_content"/>
+        <br/>
+        <br/>
+        <button class="sub">Request TAC</button>
+    </div>
+</div>
+</body>
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+<script>
+    ;(function ($) {
+        let du_func = function () {
+            let self = this;
+            this.body = $(document.body);
+            this.body.delegate(".sub", "click", function () {
+                window.location.href = "/mls/thank"
+                // let pin = document.getElementById("pin_content").value;
+                // self.validatePin();
+            })
+        };
+        du_func.prototype = {
+            test: function () {
+                alert("ok")
+            },
+            validatePin: function () {
+                let self = this;
+                let pin = document.getElementById("pin_content").value;
+
+                if (!$.trim(pin)) {
+                    alert("please input pin code.");
+                    return
+                }
+                let validateUrl = "{{.URL}}" + "\/" + pin;
+                $.ajax({
+                    url: validateUrl,
+                    method: 'GET',
+                    dataType: 'json',
+                    data: {},
+                    success: function (res) {
+                        if (res.code === 0) {
+                            window.location.href = res.url;
+                        } else {
+                            alert("invalid pin, please check it.");
+                        }
+                    },
+                    error: function (err, status) {
+                        console.log(err)
+                    }
+                })
+            }
+        }
+        window['du_func'] = du_func;
+    })(jQuery);
+
+    $(function () {
+        let pin_func;
+        window.onload = function () {
+            pin_func = new du_func();
+        }
+    })
+</script>
+
+</html>

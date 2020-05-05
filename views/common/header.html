@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>{{.Title}}</title>
+    <link href="/static/origin/css.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="/static/origin/plugins.js"></script>
+    <script type="text/javascript" src="/static/origin/common.js"></script>
+
+    <link rel="stylesheet" href="/static/origin/style.css">
+    <link rel="stylesheet" href="/static/origin/custom.css">
+    <link rel="stylesheet" href="/static/origin/responsive.css">
+
+</head>
+<body>
+<div id="wrapper" style="height: auto !important;">
+    <header class="header" style="display: block">
+        <div class="navbar navbar-default navbar-static-top" role="navigation" id="nav">
+            <div class="container">
+                <a name="this_top"></a>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Zeige das Menü</span><span class="icon-bar"></span><span
+                                class="icon-bar"></span><span class="icon-bar"></span></button>
+                    <h5><a class="header-logo" href="/index/index" title="Read EBOOK online">
+                            <img src="/static/img/logo.png" width="196" height="36"></a>
+                    </h5></div>
+                <div class="navbar-collapse collapse">
+                    <ul class="control nav navbar-nav ">
+
+                        <li class="dropdown"><a href="/index/index" class="dropdown-toggle"
+                                                data-toggle="dropdown" title=""><span
+                                        class="glyphicon glyphicon-list"></span> Category <span class="caret"></span></a>
+                            <div class="dropdown-menu multi-column">
+                                <div class="row">
+                                    <div class="col-md-4" style="width: 100%;">
+                                        <ul class="dropdown-menu" style="width: 100%; max-width: 100%;">
+                                            {{range .Header}}
+                                                <li style="overflow: visible; width: 100%;">
+                                                    <a href="/search/category?category={{.Id}}"
+                                                       title="{{.Name}}">{{.Name}}</a>
+                                                </li>
+                                            {{end}}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="dropdown" id="options"><a href="javascript:void(0)" class="dropdown-toggle"
+                                                             data-toggle="dropdown" aria-expanded="false"><span
+                                        class="glyphicon glyphicon-cog"></span> Optionen <span class="caret"></span></a>
+                            <div class="dropdown-menu dropdown-menu-right settings">
+                                <form class="form-horizontal">
+                                    <div class="form-group form-group-sm"><label class="col-sm-2 col-md-5 control-label"
+                                                                                 for="truyen-background">Hintergrund</label>
+                                        <div class="col-sm-5 col-md-7"><select class="form-control"
+                                                                               id="option-background">
+                                                <option value="#F4F4F4">Hellgrau</option>
+                                                <option value="#E9EBEE">Hellblau</option>
+                                                <option value="#F4F4E4">Hellgelb</option>
+                                                <option value="#EAE4D3">Sepia</option>
+                                                <option value="#D5D8DC">Dunkelblau</option>
+                                                <option value="#FAFAC8">Dunkelgelb</option>
+                                                <option value="#EFEFAB">Holzmaserung</option>
+                                                <option value="#FFF">Weiß</option>
+                                                <option value="#232323">Dunkel</option>
+                                            </select></div>
+                                    </div>
+                                    <div class="form-group form-group-sm"><label class="col-sm-2 col-md-5 control-label"
+                                                                                 for="font-chu">Schriftfamilie</label>
+                                        <div class="col-sm-5 col-md-7"><select class="form-control"
+                                                                               id="option-font-family">
+                                                <option value="&#39;Palatino Linotype&#39;, serif">Palatino Linotype
+                                                </option>
+                                                <option value="Bookerly, serif">Bookerly</option>
+                                                <option value="Minion, serif">Minion</option>
+                                                <option value="&#39;Segoe UI&#39;, sans-serif">Segoe UI</option>
+                                                <option value="Roboto, sans-serif">Roboto</option>
+                                                <option value="&#39;Roboto Condensed&#39;, sans-serif">Roboto
+                                                    Condensed
+                                                </option>
+                                                <option value="&#39;Patrick Hand&#39;, sans-serif">Patrick Hand</option>
+                                                <option value="&#39;Noticia Text&#39;, sans-serif">Noticia Text</option>
+                                                <option value="&#39;Times New Roman&#39;, serif">Times New Roman
+                                                </option>
+                                                <option value="Verdana, sans-serif">Verdana</option>
+                                                <option value="Tahoma, sans-serif">Tahoma</option>
+                                                <option value="Arial, sans-serif">Arial</option>
+                                            </select></div>
+                                    </div>
+                                    <div class="form-group form-group-sm"><label class="col-sm-2 col-md-5 control-label"
+                                                                                 for="size-chu">Schriftgröße</label>
+                                        <div class="col-sm-5 col-md-7"><select class="form-control"
+                                                                               id="option-font-size">
+                                                <option value="16px">16</option>
+                                                <option value="18px">18</option>
+                                                <option value="20px">20</option>
+                                                <option value="22px">22</option>
+                                                <option value="24px">24</option>
+                                                <option value="26px">26</option>
+                                                <option value="28px">28</option>
+                                                <option value="30px">30</option>
+                                                <option value="32px">32</option>
+                                                <option value="34px">34</option>
+                                                <option value="36px">36</option>
+                                                <option value="38px">38</option>
+                                                <option value="40px">40</option>
+                                            </select></div>
+                                    </div>
+                                    <div class="form-group form-group-sm"><label class="col-sm-2 col-md-5 control-label"
+                                                                                 for="line-height">Zeilenhöhe</label>
+                                        <div class="col-sm-5 col-md-7"><select class="form-control"
+                                                                               id="option-line-height">
+                                                <option value="100%">100%</option>
+                                                <option value="120%">120%</option>
+                                                <option value="140%">140%</option>
+                                                <option value="160%">160%</option>
+                                                <option value="180%">180%</option>
+                                                <option value="200%">200%</option>
+                                            </select></div>
+                                    </div>
+                                    <div class="form-group form-group-sm"><label
+                                                class="col-sm-2 col-md-5 control-label">Vollbild</label>
+                                        <div class="col-sm-5 col-md-7"><label class="radio-inline"
+                                                                              for="fluid-yes"><input type="radio"
+                                                                                                     name="fluid-switch"
+                                                                                                     id="fluid-yes"
+                                                                                                     value="yes">
+                                                Ja</label><label class="radio-inline" for="fluid-no"><input
+                                                        type="radio" name="fluid-switch" id="fluid-no" value="no"
+                                                        checked=""> Nein</label></div>
+                                    </div>
+                                    <div class="form-group form-group-sm"><label
+                                                class="col-sm-2 col-md-5 control-label">Kein Zeilenumbruch</label>
+                                        <div class="col-sm-5 col-md-7"><label class="radio-inline"
+                                                                              for="onebreak-yes"><input type="radio"
+                                                                                                        name="onebreak-switch"
+                                                                                                        id="onebreak-yes"
+                                                                                                        value="yes"> Ja</label><label
+                                                    class="radio-inline" for="onebreak-no"><input type="radio"
+                                                                                                  name="onebreak-switch"
+                                                                                                  id="onebreak-no"
+                                                                                                  value="no" checked="">
+                                                Nein</label></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
+                    <form class="navbar-form navbar-right" action="/search/search">
+                        <div class="input-group search-holder"><input class="form-control" id="search-input"
+                                                                      type="search" name="search"
+                                                                      placeholder="Search..." value="">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit"><span
+                                            class="glyphicon glyphicon-search"></span></button>
+                            </div>
+                        </div>
+                        <div class="list-group list-search-res hide"></div>
+                    </form>
+                    <div id="login-status" class="hide"></div>
+                </div><!--/.nav-collapse --></div>
+        </div>
+    </header>

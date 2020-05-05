@@ -1,0 +1,98 @@
+<main>
+    <div class="container" id="truyen-slide">
+        <div class="list list-thumbnail col-xs-12">
+            <div class="title-list"><h2><a href="javascript:;" title="Completed">Category：{{.Category}}</a></h2><a href=""
+                                                                                                       title="Novel Completed"><span
+                            class="glyphicon glyphicon-menu-right"></span></a></div>
+            <div class="index-intro">
+                {{range $index, $v := .BookList.Data}}
+                    <div class="item top-1">
+                        <a href="/read/read?id={{.Id}}" title="{{.Title}}">
+                            <img src="https://gdsepub.s3.eu-central-1.amazonaws.com/epub_cover/{{.Id}}.jpg" alt="{{.Title}}"
+                                 class="img-responsive item-img">
+                            <div class="title" style="overflow:hidden;">
+                                <h3>{{.Title}}</h3>
+                            </div>
+                        </a>
+                    </div>
+                {{end}}
+            </div>
+        </div>
+    </div>
+    <div style="width: 259px; margin: 0 auto;">
+        <ul class="pagination" id="pagination"></ul>
+    </div>
+
+</main>
+
+<script type="text/javascript" src="/static/bootstrap-paginator-master/build/bootstrap-paginator.min.js"></script>
+
+<script>
+    $("#pagination").bootstrapPaginator({
+        currentPage: '{{.BookList.Page}}',
+        totalPages: '{{.BookList.TotalPage}}',
+        bootstrapMajorVersion: 3,
+        size: "small",
+        onPageClicked: function (e, originalEvent, type, page) {
+            window.location.href = "/search/category?category={{.CategoryId}}&page=" + page
+        }
+    });
+</script>
+
+<script type="text/javascript">
+    (function ($) {
+        let index_function = function () {
+            let self = this;
+            this.body = $(document.body);
+            // this.test();
+            window.onload = function () {
+                self.autoHeight();
+            };
+            window.onresize = function () {
+                self.autoHeight();
+            }
+        };
+        index_function.prototype = {
+            test: function () {
+                alert("ok")
+            },
+            autoHeight: function () {
+                let self = this;
+                let o_width = 265;
+                let o_height = 396;
+                let proportion = o_height / o_width;
+                let proportion_2 = 167 / 127;
+                let screen_width = $(document.body).width();
+                let height = 0;
+                if (screen_width < 991) {
+                    $(".index-intro .item.top-1").css({
+                        "height": parseInt($(".index-intro .item.top-1").css("width")) * proportion + "px"
+                    });
+                    // $(".index-intro .item.top-1 div.title").css({
+                    //     "height": "4.52vh"
+                    // })
+                    // height = parseInt($(".list-thumbnail > .row:nth-child(2) > div").css("width")) * proportion_2;
+                    // let img_height = $(".list-thumbnail > .row:nth-child(2) > div").children("img");
+                    // console.log(img_height)
+                    // $(".list-thumbnail > .row:nth-child(2) > div").css({
+                    //     "height": "10px"
+                    // });
+                } else {
+                    $(".index-intro .item.top-1").css({
+                        "height": "auto"
+                    });
+                    // $(".index-intro .item.top-1 div.title").css({
+                    //     "height": "6vh"
+                    // })
+                }
+
+
+            }
+        }
+        window['index_function'] = index_function
+    })(jQuery);
+    $(function () {
+        let index = new index_function();
+    });
+</script>
+<!-- designed by yy(github.com/guaidashu) -->

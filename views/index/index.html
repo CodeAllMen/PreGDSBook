@@ -1,0 +1,126 @@
+<main id="container" class="" style="height: auto !important;">
+    <div style="width: 100%; height: 15px;"></div>
+    <div class="container" id="intro-index">
+        <div class="title-list"><h2><a href="/search/search?search=&hot=1" title="Hot Novel">Hot</a></h2><a
+                    href="javascript:;" title="Hot Novel"><span
+                        class="glyphicon glyphicon-fire"></span></a><select id="hot-genre-select"
+                                                                            class="form-control new-select">
+                <option value="all">Alle</option>
+            </select></div>
+        <div class="index-intro">
+            {{range .BookList}}
+                <div class="item top-1"><a href="/read/read?id={{.Id}}"
+                                           title="{{.Title}}"><img
+                                src="https://gdsepub.s3.eu-central-1.amazonaws.com/epub_cover/{{.Id}}.jpg"
+                                alt="{{.Title}}" class="img-responsive item-img">
+                        <div class="title" style="overflow:hidden;"><h3 style="white-space: pre;">{{.Title}}</h3></div>
+                    </a></div>
+            {{end}}
+        </div>
+    </div>
+    <div class="container" id="list-index">
+        <div class="list list-truyen list-new col-xs-12 col-sm-12 col-md-8 col-truyen-main">
+            <div class="title-list">
+                <h2>
+                    <span>Latest appearance</span>
+                </h2>
+                <a href="/read/read?id={{.Id}}" title="">
+                    <span class="glyphicon glyphicon-menu-right"></span>
+                </a>
+                <select id="new-genre-select" class="form-control new-select">
+                    <option value="all">Alle</option>
+                </select></div>
+            <div class="list index-intro">
+                {{range .CompleteBookList}}
+                    <div class="row" itemscope="">
+                        <div class="col-xs-9 col-sm-6 col-md-5 col-title">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <h3 style="white-space: normal;">
+                                <a href="/read/read?id={{.Id}}" title="{{.Title}}">
+                                    {{.Title}}
+                                </a>
+                            </h3>
+                        </div>
+                        <div class="hidden-xs col-sm-3 col-md-3 col-cat text-888">
+                            <a href="/read/read?id={{.Id}}">{{.Category}}</a>,
+                            <a href="/read/read?id={{.Id}}">{{.Author}}</a>
+                        </div>
+                    </div>
+                {{end}}
+            </div>
+        </div>
+    </div>
+    <div class="container" id="truyen-slide">
+        <div class="list list-thumbnail col-xs-12">
+            <div class="title-list"><h2><a href="/search/search?search=&completed=1" title="Completed">Completed</a></h2><a href=""
+                                                                                          title="Novel Completed"><span
+                            class="glyphicon glyphicon-menu-right"></span></a></div>
+            <div class="index-intro">
+                {{range .CompleteBookList}}
+                    <div class="item top-1"><a href="/read/read?id={{.Id}}" title="{{.Title}}">
+                            <img src="https://gdsepub.s3.eu-central-1.amazonaws.com/epub_cover/{{.Id}}.jpg" alt="{{.Title}}" class="img-responsive item-img">
+                            <div class="title" style="overflow:hidden;"><h3>{{.Title}}</h3></div>
+                        </a>
+                    </div>
+                {{end}}
+            </div>
+        </div>
+    </div>
+</main>
+
+<script type="text/javascript">
+    (function ($) {
+        let index_function = function () {
+            let self = this;
+            this.body = $(document.body);
+            // this.test();
+            window.onload = function () {
+                self.autoHeight();
+            };
+            window.onresize = function () {
+                self.autoHeight();
+            }
+        };
+        index_function.prototype = {
+            test: function () {
+                alert("ok")
+            },
+            autoHeight: function () {
+                let self = this;
+                let o_width = 265;
+                let o_height = 396;
+                let proportion = o_height / o_width;
+                let proportion_2 = 167 / 127;
+                let screen_width = $(document.body).width();
+                let height = 0;
+                if (screen_width < 991) {
+                    $(".index-intro .item.top-1").css({
+                        "height": parseInt($(".index-intro .item.top-1").css("width")) * proportion + "px"
+                    });
+                    // $(".index-intro .item.top-1 div.title").css({
+                    //     "height": "4.52vh"
+                    // })
+                    // height = parseInt($(".list-thumbnail > .row:nth-child(2) > div").css("width")) * proportion_2;
+                    // let img_height = $(".list-thumbnail > .row:nth-child(2) > div").children("img");
+                    // console.log(img_height)
+                    // $(".list-thumbnail > .row:nth-child(2) > div").css({
+                    //     "height": "10px"
+                    // });
+                } else {
+                    $(".index-intro .item.top-1").css({
+                        "height": "auto"
+                    });
+                    // $(".index-intro .item.top-1 div.title").css({
+                    //     "height": "6vh"
+                    // })
+                }
+
+
+            }
+        }
+        window['index_function'] = index_function
+    })(jQuery);
+    $(function () {
+        let index = new index_function();
+    });
+</script>

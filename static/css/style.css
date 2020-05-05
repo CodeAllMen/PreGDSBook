@@ -1,0 +1,43 @@
+body {
+    text-align: center;
+    margin: auto;
+    max-width: 640px;
+    background: #FFFFFF;
+    color: #0d3349;
+}
+
+img {
+    width: 100%;
+}
+
+button {
+    border: transparent;
+    border-radius: 5px;
+    width: 80%;
+    font-size: 20px;
+    line-height: 35px;
+    color: #FFFFFF;
+    background: #0d3349;
+}
+
+a {
+    color: #2a85a0;
+}
+
+.box {
+    width: 90%;
+    margin: auto;
+    display: block;
+}
+
+.left-box {
+    float: left;
+    display: inline;
+    max-width: 45%;
+}
+
+.right-box {
+    float: right;
+    display: inline;
+    max-width: 45%;
+}
