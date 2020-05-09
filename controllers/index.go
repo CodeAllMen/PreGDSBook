@@ -24,7 +24,7 @@ func (index *IndexController) Get() {
 	index.Data["HotBookList"] = hotBookList
 	index.Data["BookList"] = bookList
 	index.Data["CompleteBookList"] = completeBookList
-	index.Data["Title"] = "gdsbook"
+	index.Data["Title"] = "Enrich Read Book"
 	index.Layout = "common/layout.html"
 	index.TplName = "index/index.html"
 }
@@ -40,7 +40,7 @@ func (index *IndexController) Index() {
 	index.Data["HotBookList"] = hotBookList
 	completeBookList, _ := models.GetBookList(params)
 	index.Data["BookList"] = bookList
-	index.Data["Title"] = "gdsbook"
+	index.Data["Title"] = "Enrich Read Book"
 	index.Data["CompleteBookList"] = completeBookList
 	index.Layout = "common/layout.html"
 	index.TplName = "index/index.html"

@@ -1,0 +1,110 @@
+/* designed by yy(github.com/guaidashu) */
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box; /* Firefox */
+    -webkit-box-sizing: border-box; /* Safari */
+}
+
+
+.main_container {
+    width: 360px;
+    height: auto;
+    margin: 0 auto 0 auto;
+    overflow-x: hidden;
+    position: relative;
+    background-image: url("../img/bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 360px 100%;
+    /*background-color: #c1e2b3;*/
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(208, 208, 208, 0.7);
+    padding: 15px 15px;
+}
+
+.container_sub_btn {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(60, 60, 60, 0.8);
+    padding: 15px 15px;
+}
+
+
+.service_name_container {
+    font-size: 80px;
+    font-family: "!";
+    color: rgb(2, 0, 97);
+    text-transform: uppercase;
+    line-height: 1;
+    text-align: center;
+    text-shadow: 0px 4px 0.64px rgba(204, 153, 51, 0.004);
+    -moz-transform: matrix(0.55579343788433, 0, 0, 0.55579343788433, 0, 0);
+    -webkit-transform: matrix(0.75579343788433, 0, 0, 0.75579343788433, 0, 0);
+    -ms-transform: matrix(0.55579343788433, 0, 0, 0.55579343788433, 0, 0);
+    z-index: 137;
+}
+
+.service_name {
+    color: #e6e6e6;
+    text-align: center;
+}
+
+.service_describe {
+    text-align: center;
+    color: #e6e6e6;
+    font-family: "Roboto";
+    font-size: 18px;
+}
+
+.service_price {
+    text-align: center;
+    font-size: 18px;
+    color: #e6e6e6;
+}
+
+.service_subscribe {
+    text-align: center;
+    font-size: 16px;
+    color: #3c3c3c;
+}
+
+.service_subscribe_btn {
+    text-align: left;
+    font-size: 12px;
+    color: #e6e6e6;
+}
+
+.service_sub_btn {
+    text-align: center;
+    font-size: 16px;
+    color: #e6e6e6;
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    background-color: #c7223d;
+    cursor: pointer;
+}
+
+.service_disclaimer {
+    text-align: left;
+    color: #3c3c3c;
+    font-size: 10px;
+}
+
+.service_footer_links {
+    font-size: 13px;
+    width: 100%;
+    text-align: center;
+    color: #c7223d;
+}
+
+.service_footer_links a{
+    font-size: 13px;
+    padding: 0 5px;
+    color: #c7223d;
+}
