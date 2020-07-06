@@ -1,0 +1,2 @@
+function loadNextPage(){""!=$(".pagination__next").attr("href")&&$.get($(".pagination__next").attr("href"),function(n){$ajaxResult=$($.parseHTML(n)),$newPagination=$ajaxResult.find("#pagination").html(),$newProducts=$ajaxResult.find(".game").fadeIn(),$("#games").append($newProducts),$("#pagination").html($newPagination),window.activeScroll=0})}$(document).ready(function(){$("#pagination").hide()});
+//# sourceMappingURL=/cache/js/24076.js.map

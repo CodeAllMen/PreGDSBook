@@ -4,6 +4,7 @@ import (
 	"github.com/MobileCPX/PreGDSBook/controllers/lp"
 	"github.com/MobileCPX/PreGDSBook/controllers/lp/at"
 	"github.com/MobileCPX/PreGDSBook/controllers/lp/mls"
+	"github.com/MobileCPX/PreGDSBook/controllers/sk"
 	"net/http"
 
 	"github.com/astaxie/beego"
@@ -26,6 +27,12 @@ func init() {
 	beego.Router("/mls/pin", &mls.SubPage{}, "*:Pin")
 	beego.Router("/mls/thank", &mls.SubPage{}, "*:Thank")
 
+	//sk
+	beego.Router("/sk/lp", &sk.SubPage{}, "*:Lp")
+	beego.Router("/sk/terms", &sk.SubPage{}, "*:Terms")
+	beego.Router("/sk/privacy", &sk.SubPage{}, "*:Privacy")
+	beego.Router("/sk/help", &sk.SubPage{}, "*:Help")
+
 	// at
 	beego.Router("/at/lp", &at.SubPage{}, "*:Lp")
 	beego.Router("/at/tan", &at.SubPage{}, "*:Tan")
@@ -41,6 +48,12 @@ func init() {
 	beego.Router("/at/Rucktrittsrechts", &at.SubPage{}, "*:Rucktrittsrechts")
 	beego.Router("/at/FAQ", &at.SubPage{}, "*:FAQ")
 	beego.Router("/at/welcome", &at.SubPage{}, "*:Welcome")
+	beego.Router("/at/register_msisdn", &at.SubPage{}, "*:Register")
+	beego.Router("/at/wifi/msisdn", &at.SubPage{}, "*:InputMsisdnPage")
+	beego.Router("/at/unsub-result", &at.SubPage{}, "*:Unsub")
+
+	beego.Router("/login", &controllers.LoginController{})
+	beego.Router("/user/?:method", &controllers.UserController{})
 
 	// beego.Router("/lp", &controllers.SubFlowController{})
 	// beego.Router("/help", &controllers.SubFlowController{}, "Get:ServiceManagement")

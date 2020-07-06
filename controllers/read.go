@@ -11,6 +11,11 @@ type ReadController struct {
 }
 
 func (r *ReadController) Read() {
+	if r.GetSession("user") == nil {
+		r.Redirect("/login", 302)
+		r.StopRun()
+	}
+
 	bookId, _ := r.GetInt("id")
 	book, _ := models.GetBookById(bookId)
 	r.Data["Book"] = book

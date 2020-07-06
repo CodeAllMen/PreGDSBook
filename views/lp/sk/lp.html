@@ -55,32 +55,47 @@
 
     <div style="width: 100%; height: 100px;"></div>
     <div class="service_subscribe">
-        ENRICH READ (Abo, 3,99€ pro Woche) ist eine beliebte E-Book-Site, die viele E-Books enthält.
+        Cena služby 6 EUR/týždeň<br><br>
+        Pošlite SMS s textom <span style="color: #e94b0d">ENRICHREAD 9017</span> pre <span style="color: #e94b0d">7041</span><br>
+        ALEBO<br>
+        Kliknutím na toto tlačidlo vygenerujete SMS<br> 
     </div>
 </div>
 <div class="container_sub_btn">
     <div class="service_subscribe_btn">
         <div style="width: 100%; height: 20px;"></div>
-        <div class="service_sub_btn">WEITER</div>
+        <a href="sms:7041;?&amp;body=9017 AKTIVACIA PREDPLATENEJ SLUZBY ENRICHREAD, CENA 6 EUR/TYZDEN" style="text-decoration:none;">
+        <div class="service_sub_btn">Odoslať</div>
+    </a>
         <div style="width: 100%; height: 10px;"></div>
-        <div class="service_sub_checkbox">
-            <input id="service_renounce_sure" style="cursor:pointer;" type="checkbox"/>Mit Klick auf
-            WEITER stimme ich ausdrücklich der sofortigen Leistungserbringung und dem Verlust des <a
-                    href="/at/Rucktrittsrechts" class="service_footer_links">Rücktrittsrechts</a> zu.
+        <div class="service_sub_checkbox" style="text-align: center;">
+            <!-- <input id="service_renounce_sure" style="cursor:pointer;" type="checkbox"/>Mit Klick auf -->
+           Vypnutie: odošlite ENRICHREAD STOP na 7041 
         </div>
     </div>
 </div>
 <div class="container">
     <div style="width: 100%; height: 10px;"></div>
     <div class="service_disclaimer">
-        ENRICH READ, wöchentlich EUR 3,99 (zzgl. Datenübertragungskosten) Wöchentlich aktualisiert. E-Book online lesen.
-        Dienstleister: Foxseek Media Limited, Unit B, 10/F Lee May Buliding 788-790 Nathan Road Mongkok Kowloon Hong
-        Kong, VAT:303371345. Der Benutzer kann sein Abonnement jederzeit unter der telefonischen Hotline: 0800100336
-        (EUR 0,00/Min.) oder beim E-Mail-Support:info-at@mobileinfo.biz kündigen. Der
-        Benutzer kann den Dienst über den Link „Kündigung" selber verwalten/kündigen. A1 Nutzer: kündige dein
-        Abo auf <a href="http://www.a1.net/meina1" class="service_footer_links">www.a1.net/meina1</a>. Während der
-        Abonnementlaufzeit hat der Nutzer uneingeschränkten Zugriff
-        auf alle Inhalte.
+        Poslaním správy s textom ENRICHREAD na číslo 7041 si predplatite službu ENRICHREAD : Služba stojí pre Telekom a Orange a O2 a 4KA <a id="tariff">6,00 EUR ( 3 x 2,00 EUR)</a>
+        vrátane DPH týždenne.
+        Môžu Vám byt naúčtované dodatočné poplatky za prenos dát. 
+        Odpovedaním potvrdzovacou SMS súhlasíte s prihlásením sa na odber našej 
+        služby. Doba platnosti sa automaticky predlžuje dovtedy, kým nepošlete 
+        správu s textom ENRICHREAD STOP na číslo 7041.
+        Tento obsah sa dá použiť na všetkých mobilných zariadeniach. Ak 
+        potrebujete informácie, zavolajte na 0800008304. alebo pošlite email na 
+        info-sk@mobileinfo.biz.
+        Zaslaním potvrdzujúcej SMS si predplatite službu zasielania SMS 
+        správ. Ak máte menej ako 18 rokov, musíte požiadat o súhlas svojich 
+        rodičov. Vašou odpovedou prostredníctvom potvrdzujúcej SMS súhlasíte s 
+        prihlásením sa na odber našej služby.
+        Centrum pomoci 0800008304 alebo e-mailová podpora 
+        info-sk@mobileinfo.biz dostupná pondelok - piatok 9-17h.
+
+        Vlastnik služby: Foxseek, www.foxseek.com, 0800008304
+        SMS agregator pre Slovensko: 3499games, s.r.o. fn.3499games.com, 
+        0800008304, support@foxseek.com
     </div>
 
     <div style="width: 100%; height: 30px;"></div>
@@ -98,29 +113,19 @@
 
 
     <div class="service_footer_links">
-        <a href="/at/AGB">Nutzungsbedingungen</a> |
-        <a href="/at/Impressum">Impressum</a> |<br>
-        <a href="/at/Rucktrittsrechts">Hinweis auf Rücktrittsrecht</a><br>
-        <a href="/at/Datenschutz">Datenschutz</a> |
-        <a href="/at/KONTAKT">Kontakt/Hilfe</a> |
-        <a href="http://www.mobileinfo.biz/customercare/">Kündigung</a>
+        <p class="links">
+            <a href="/sk/terms">Všeobecné obchodné podmienky</a> -
+            <a href="/sk/privacy">Zásady ochrany osobných údajov</a> -
+            <a href="/sk/help">Pomoc</a>
+        </p>
+
+        <p class="copyrights">
+            ENRICHREAD ponúka Foxseek Media Limited
+        </p>
     </div>
 
 </div>
 
 </body>
-
-<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-<script>
-    $(".service_sub_btn").click(function () {
-        if (!$("#service_renounce_sure").is(':checked')) {
-            alert("Bitte stimmen Sie den NUTZUNGSBEDINGUNGEN zu");
-            return
-        } else {
-            window.location.href = '{{.URL}}';
-        }
-    })
-</script>
-
 </html>
 <!-- designed by yy(github.com/guaidashu) -->

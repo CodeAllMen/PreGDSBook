@@ -1,0 +1,63 @@
+<html class=" touch" lang="zh" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <meta name="theme-color" content="#c52626">
+    <title>Enrichread</title>
+    <!-- <link rel="stylesheet" media="screen" href="/static/css/page2.css">
+    <link rel="stylesheet" media="screen" href="/static/css/page.css"> -->
+
+    <!-- <link rel="stylesheet" media="screen" href="/static/css/index.css"> -->
+    <link rel="stylesheet" media="screen" href="/static/css/modal.css">
+</head>
+
+<body class="items tag games-active" data-controller="Items" data-action="tag" data-filter-compatibility-games="true"
+      data-remove-intersection-links="true" style="margin:0 auto;max-width:360px;background: #fbffe9;font-family: sans-serif;">
+
+<div class="features-overlay"></div>
+<nav class="navbar navbar-inverse" style="height: 62px;">
+    <img src="/static/img/logo.png" style="margin-top: -17%;width: 85%;margin-left: 7.5%;">
+</nav>
+<div class="container" style="margin-top: -19%;">
+    <div class="wrapper">
+        <form action="/user/login" method="get">
+            <p>Bitte geben sie ihre Telefonnummer ein:</p>
+            <br>
+            <p class="login_failed" style="width: 300px;
+                text-align: center;
+                margin-left: -13px;
+                color: #f00;display: none">* Anmeldung fehlgeschlagen, Telefonnummer überprüfen.</p>
+            <ul>
+                <li>
+                    <div class="text">
+                        <span class="yonghu"></span><input type="text" placeholder="43xxxxxxxx" id="name" name="user">
+                    </div>
+                </li>
+                <!-- <li>
+                    <div class="password">
+                        <span class="mima"></span><input type="password" placeholder="" id="pass">
+                    </div>
+                </li> -->
+                <li>
+                    <input type="button" value="Anmelden" id="submit">
+                </li>
+            </ul>
+        </form>
+    </div>
+</div>
+</body>
+<script src="/static/js/min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+    $("#submit").click(function(){
+        window.location.href="/user/login?user="+$("#name").val()+"&pass="+$("#pass").val()
+    })
+    var status = {{.status}}
+    if (status=="1"){
+        $(".login_failed").show();
+    }
+</script>
+</html>
