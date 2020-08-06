@@ -17,4 +17,5 @@ type Users struct {
 func init() {
 	// orm.Debug = true
 	orm.RegisterModel(new(BookModel), new(CategoryModel), new(Users))
+	orm.RunSyncdb("default", false, true)
 }

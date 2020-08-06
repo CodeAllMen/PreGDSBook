@@ -63,6 +63,8 @@
         <div style="width: 100%; height: 20px;"></div>
         <div class="service_sub_btn">WEITER</div>
         <div style="width: 100%; height: 10px;"></div>
+        <div class="redirect_btn">Ich bin bereits Kunde</div>
+        <div style="width: 100%; height: 10px;"></div>
         <div class="service_sub_checkbox">
             <input id="service_renounce_sure" style="cursor:pointer;" type="checkbox"/>Mit Klick auf
             WEITER stimme ich ausdrücklich der sofortigen Leistungserbringung und dem Verlust des <a
@@ -119,6 +121,10 @@
         } else {
             window.location.href = '{{.URL}}';
         }
+    })
+
+    $(".redirect_btn").click(function () {
+        window.location.href = '/login';
     })
 </script>
 

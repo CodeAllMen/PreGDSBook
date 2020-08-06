@@ -9,6 +9,7 @@ import (
 	"github.com/MobileCPX/PreBaseLib/util"
 	"github.com/MobileCPX/PreGDSBook/models"
 	"github.com/astaxie/beego"
+	"strings"
 )
 
 const (
@@ -33,6 +34,11 @@ type SubPage struct {
 }
 
 func (s *SubPage) Lp() {
+	if s.GetSession("user") != nil {
+		s.Redirect("/", 302)
+		s.StopRun()
+	}
+
 	trackID := s.GetString("track")
 	if trackID == "" {
 		track := new(tracking.Track)
@@ -142,7 +148,46 @@ func (s *SubPage) Register() {
 		Sp:       "Dimoco",
 		Country:  "AT",
 	}
+
 	models.RegistereUser(user)
+
+	user = models.Users{
+		UserName: strings.Replace(msisdn, "43", "0", 1),
+		Password: strings.Replace(msisdn, "43", "0", 1),
+		Sp:       "Dimoco",
+		Country:  "AT",
+	}
+
+	models.RegistereUser(user)
+
+	user = models.Users{
+		UserName: strings.Replace(msisdn, "43", "", 1),
+		Password: strings.Replace(msisdn, "43", "", 1),
+		Sp:       "Dimoco",
+		Country:  "AT",
+	}
+
+	models.RegistereUser(user)
+
+	user = models.Users{
+		UserName: strings.Replace(msisdn, "43", "0", 1),
+		Password: strings.Replace(msisdn, "43", "0", 1),
+		Sp:       "Dimoco",
+		Country:  "AT",
+	}
+
+	models.RegistereUser(user)
+
+	user = models.Users{
+		UserName: strings.Replace(msisdn, "43", "", 1),
+		Password: strings.Replace(msisdn, "43", "", 1),
+		Sp:       "Dimoco",
+		Country:  "AT",
+	}
+
+	models.RegistereUser(user)
+
+	s.SetSession("user", msisdn)
 
 	s.Data["json"] = msisdn
 	s.ServeJSON()
